@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Spectral" rel="stylesheet">
+
+    <title>Nikola Portfolio</title>
+</head>
+<body>
+    <header>
+        <div class="content-wrap">
+            <nav>
+                <ul>
+                    <li><a href="#about">about me</a></li>
+                    <li><a href="#portfolio">portfolio</a></li>
+                    <li><a href="#contact">contact me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="about" id="about">
+            <div class="content-wrap">
+                <img src="imgs/me.jpg" alt="Unable to load image" id="me" width="400px" />
+                <h1>Hello, I am <span class="alert">Nikola</span></h1>
+                <p>
+                    I am Nikola Markovic, web developer from Smederevo, Serbia.<br>
+                    I always had an interest in computers so in my spare time I would learn different programming languages and create my own apps. 
+                    <br>Here you can check some of my projects. I am currently looking for an entry level position.
+                </p>
+                <div class="langs">
+                    <p>Some of the languages and technologies I've worked with:</p>
+                    <img src="imgs/html5.png" alt="Unable to load image" class="imgs" />
+                    <img src="imgs/css.png" alt="Unable to load image" class="imgs" />
+                    <img src="imgs/js.png" alt="Unable to load image" class="imgs" />
+                    <img src="imgs/node.png" alt="Unable to load image" class="imgs" />
+                    <img src="imgs/react.png" alt="Unable to load image" class="imgs" />
+                    <img src="imgs/python.png" alt="Unable to load image" class="imgs" />
+                </div>
+            </div>
+        </section>
+        <section class="portfolio" id="portfolio">
+            <div class="content-wrap">
+                <h1>Some of my projects</h1>
+                <hr />
+                <div class="flex">
+                    <div class="project">
+                        <h2>Phone Book Application</h2>
+                        <img src="gifs/phone.gif" alt="Unable to load gif" />
+                        <p>Phone Book Application that I created using NodeJS and ReactJS. You can add, edit or remove contacts.</p>
+                        <div>
+                            <a href="https://nikola-phone-book-app.herokuapp.com/" target="_blank" class="btn">LIVE</a>
+                            <a href="https://github.com/nikolamarkovic98/phone-book-application" target="_blank" class="btn">CODE</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h2>Text Editor</h2>
+                        <img src="gifs/texteditor.gif" alt="Unable to load gif" />
+                        <p>A Text Editor I made using python with Tkinter package.</p>
+                        <div>
+                            <a href="https://github.com/nikolamarkovic98/python-text-editor" target="_blank" class="btn">CODE</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h2>Cube Warfare</h2>
+                        <img src="gifs/warfare.gif" alt="Unable to load gif" />
+                        <p>Cube Warfare. Simple game that I created using Javascript Canvas API.</p>
+                        <div>
+                            <a href="https://cube-warfare.herokuapp.com/" target="_blank" class="btn">LIVE</a>
+                            <a href="https://github.com/nikolamarkovic98/cube-warfare" target="_blank" class="btn">CODE</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h2>Old Portfolio</h2>
+                        <img src="gifs/oldportfolio.gif" alt="Unable to load gif" />
+                        <p>Old Portfolio</p>
+                        <div>
+                            <a href="https://portfolio-nikola.herokuapp.com/" target="_blank" class="btn">LIVE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dots">
+                    <div class="dot" data-num="0" onclick=changeProjectOnClick(this)></div>
+                    <div class="dot" data-num="1" onclick=changeProjectOnClick(this)></div>
+                    <div class="dot" data-num="2" onclick=changeProjectOnClick(this)></div>
+                    <div class="dot" data-num="3" onclick=changeProjectOnClick(this)></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <section>
+            <div class="content-wrap">
+                <h1>Contact <span class="alert">me!</span></h1>
+                <p>If you liked some of my project feel free to <span class="alert">send me an email!</span></p>
+                <form>
+                    <input type="text" placeholder="Your name" />
+                    <input type="text" placeholder="Subject" />
+                    <input type="email" placeholder="Your email address" />
+                    <textarea></textarea>
+                    <button type="submit" onclick=prevent>SEND</button>
+                </form>
+            </div>
+        </section>
+    </footer>
+    <script>
+        prevent = (e) => {
+            e.preventDefault();
+        }
+
+        let projects = document.getElementsByClassName('project');
+        let dots = document.getElementsByClassName('dot');
+        let i = 0;
+
+        turnOn = () => {
+            projects[i].style.display = 'block';
+            dots[i].style.backgroundColor = '#80A994'
+        }
+        turnOff = () => {
+            projects[i].style.display = 'none';
+            dots[i].style.backgroundColor = '#E3E5B9';
+        }
+
+        turnOn();
+
+        changeProject = () => {
+            turnOff();
+            i = i + 1;
+            if(i==4){
+                i = 0;
+            }
+            turnOn();
+        }
+
+        let interval = setInterval(changeProject, 5000);
+
+        changeProjectOnClick = (dot) => {
+            clearInterval(interval);
+            num = dot.getAttribute('data-num');
+            turnOff();
+            i = Number(num);
+            projects[i].style.display = 'block';
+            turnOn();
+        }
+    </script>
+</body>
+</html>
