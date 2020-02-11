@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="add">Add</button>
+    <span id="brojac">0</span>
+    <button id="order">Order</button>
+    <p id="p"></p>
+
+    <script>
+        var x = 0;
+        let add = document.querySelector('#add');
+        let order = document.querySelector('#order');
+        add.addEventListener('click', function(){
+            x++;
+            document.querySelector('#brojac').innerHTML = x;
+        });
+        order.addEventListener('click', function(){
+            document.querySelector('#p').innerHTML += `Narucili ste ${x} pica, ${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}<br>`;
+            x = 0;
+            document.querySelector('#brojac').innerHTML = x;
+        });
+    </script>
+</body>
+</html>

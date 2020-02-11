@@ -9,13 +9,15 @@ zadatak8.js
 #####
 */
 
-for(let i = 1; i <= 5; i++){
+let n = 5;
+
+for(let i = 1; i <= n; i++){
     let j = 1;
     let mario = '';
-    for(; j <= 5 - i; j++){
+    for(; j <= n - i; j++){
         mario += ' '
     }
-    for(let k = 0; k <= 5 - j; k++){
+    for(let k = 0; k <= n - j; k++){
         mario += '#'
     }
     console.log(mario);
