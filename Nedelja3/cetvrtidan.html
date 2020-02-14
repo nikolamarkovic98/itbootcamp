@@ -20,9 +20,13 @@
             document.querySelector('#brojac').innerHTML = x;
         });
         order.addEventListener('click', function(){
-            document.querySelector('#p').innerHTML += `Narucili ste ${x} pica, ${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}<br>`;
-            x = 0;
-            document.querySelector('#brojac').innerHTML = x;
+            if(x == 0){
+                document.querySelector('#p').innerHTML += 'Ne mozete naruciti 0 pice.<br>';
+            } else{
+                document.querySelector('#p').innerHTML += `Narucili ste ${x} pica, ${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}<br>`;
+                x = 0;
+                document.querySelector('#brojac').innerHTML = x;
+            }
         });
     </script>
 </body>
