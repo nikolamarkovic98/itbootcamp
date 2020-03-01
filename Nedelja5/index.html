@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="app" class="content-wrap">
+        <section>
+            <div>
+                <h1 id="total"></h1>
+                <hr>
+            </div>
+            <form>
+                <h2 id="idk">Dodaj prihod:</h2>
+                <div class="form-box">
+                    <input type="text" id="opis-input" placeholder="Opis">
+                </div>
+                <div class="form-box">
+                    <input type="text" id="iznos-input" placeholder="Iznos">
+                </div>
+                <div class="form-box">
+                    <select id="select-input">
+                        <option selected>Prihodi</option>
+                        <option>Rashodi</option>
+                    </select>
+                </div>
+                <button type="submit" id="add">Dodaj</button>
+            </form>
+            <p id="msg"></p>
+        </section>
+        <section id="display">
+            <nav>
+                <div id="prikazi-prihode" class="toggle active">PRIHODI</div>
+                <div id="prikazi-rashode" class="toggle">RASHODI</div>
+            </nav>
+            <div class="prihodi-rashodi">
+                <div id="prihodi">
+                    <div class="item-box-flex prihod-header">
+                        <h2>Prihodi</h2>
+                        <p id="total-prihodi"></p>
+                    </div>
+                    <div id="prihodi-list"></div>
+                </div>
+                <div id="rashodi" class="hide">
+                    <div class="item-box-flex rashodi-header">
+                        <h2>Rashodi</h2>
+                        <p id="total-rashodi"></p>
+                    </div>
+                    <div id="rashodi-list"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="init.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
