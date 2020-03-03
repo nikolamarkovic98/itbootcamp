@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>ITBootcamp</title>
+</head>
+
+<body>
+    <img src="assets/images/elon-musk.png" width="100px" id="elon">
+
+    <div id="app">
+        <header>
+            <h1>SpaceX API Docs</h1>
+        </header>
+        <main>
+            
+        </main>
+    </div>
+
+    <script>
+        const elon_img = document.querySelector('#elon');
+
+        document.body.addEventListener('mousemove', e => {
+            elon_img.style.top = (e.screenY - 80) + 'px';
+            elon_img.style.left = e.screenX + 'px';
+        });
+    </script>
+</body>
+
+</html>

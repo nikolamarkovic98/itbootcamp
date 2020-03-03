@@ -1,9 +1,9 @@
 const posto = (a, b) => {
     let rashodi = a / b * 100;
-    let mario = rashodi > 0 ? rashodi.toFixed(0) : rashodi.toFixed(2);
+    let mario = rashodi > 0 ? rashodi.toFixed(2) : rashodi.toFixed(0);
     if(mario == Infinity)
         mario = 100;
-    return mario;
+    return rashodi;
 }
 
 const updateView = signs => {
