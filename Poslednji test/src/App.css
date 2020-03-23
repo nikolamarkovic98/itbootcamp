@@ -1,0 +1,12 @@
+.pages{
+  text-align: center;
+}
+.pages p{
+  display: inline-block;
+  margin: 0 6px;
+  cursor: pointer;
+}
+.pages p:hover{
+  color: blue;
+  text-decoration: underline;
+}
