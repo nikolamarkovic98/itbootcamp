@@ -14,8 +14,10 @@ export const StoriesContainer = () => {
 
   return (
     <div>
-        <button onClick={e => {setNum(num+10)}}>+</button>
-        <button onClick={e => {setNum(num-10)}}>-</button>
+        <div className="align">
+          <button onClick={e => {setNum(num+10)}}>+</button>
+          <button onClick={e => {setNum(num-10)}}>-</button>
+        </div>
         <div className="flex">
           {storyIds.slice(0,num).map(storyId => <Story storyId={storyId} key={storyId}/>)}
         </div>
